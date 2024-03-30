@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/data_table.css' %}">
+</head>
+
+<body>
+    <label for="cars">Choose a KEY to search:</label>
+
+    <select name="cars" id="choose_key">
+
+        <br>
+        <br>
+
+    </select>
+    <input type="text" id="custom_search_by_key" placeholder="CUSTOM search..">
+
+    <br>
+    <br>
+    <table id="data_table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                {% for data in table_head_list %}
+                <th>{{ data }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody id="data_table_body"></tbody>
+        <tfoot>
+            <tr>
+                {% for data in table_head_list %}
+                <th>{{ data }}</th>
+                {% endfor %}
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/data_tables.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+
+</html>
